@@ -21,3 +21,49 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const galleryEl = document.querySelector('#gallery');
+
+
+const makeGalleryMarkup = ({url, alt})=> {
+  return `
+  <li>
+  <img src= ${url} alt = ${alt}>
+  </li>
+  `;
+}
+const makeGallery = images.map(makeGalleryMarkup).join(" ");
+
+
+galleryEl.insertAdjacentHTML('beforeend', makeGallery);
+console.log(galleryEl)
+
+
+
+// const makeGalleryOptions = image => {
+  
+//     const galleryItemEl = document.createElement('li');
+//     // console.log(galleryItemEl);
+//     galleryItemEl.classList.add('gallery__item');
+
+//   const galleryImageEl = document.createElement('img');
+//     galleryImageEl.src = image.url;
+//     galleryImageEl.alt = image.alt;
+//     galleryImageEl.classList.add('gallery__image');
+//     // console.log(galleryImageEl);
+   
+
+//   makeGallery.append(galleryItemEl, galleryImageEl);
+  
+//     return makeGallery;
+     
+// };
+
+// const elements = images.map(makeGalleryOptions);
+// console.log(elements);
+
+
+
+
+
+
+
