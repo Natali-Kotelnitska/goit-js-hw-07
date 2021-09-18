@@ -16,6 +16,7 @@
 const categoriEl = document.querySelector('#categories');
 console.log(`В списке ${categoriEl.children.length} категории.`);
 
+
 const itemTitleEl = document.querySelectorAll("h2");
 
 console.log(`Категория: ${itemTitleEl[0].textContent}`);
