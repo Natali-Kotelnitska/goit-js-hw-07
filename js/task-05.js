@@ -11,9 +11,13 @@ refs.input.addEventListener('input', onOutputChange);
 
 function onOutputChange(event) {
    
-    if (event.currentTarget.value) {
-        refs.output.textContent = event.currentTarget.value
-    } else {
-        refs.output.textContent = "незнакомец";
-    }
+    const message = event.currentTarget.value
+    ? refs.output.textContent = event.currentTarget.value
+    :refs.output.textContent = "незнакомец";
+
+    // if (event.currentTarget.value) {
+    //     refs.output.textContent = event.currentTarget.value
+    // } else {
+    //     refs.output.textContent = "незнакомец";
+    // }
 };

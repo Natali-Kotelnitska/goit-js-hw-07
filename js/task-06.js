@@ -13,6 +13,7 @@ const inputLength = Number(inputValidationEl.dataset.length);
 inputValidationEl.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
+    
     if (event.currentTarget.value.length === inputLength) {
         inputValidationEl.classList.add('valid')
         inputValidationEl.classList.remove('invalid')

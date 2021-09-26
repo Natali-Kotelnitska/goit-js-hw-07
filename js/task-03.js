@@ -39,27 +39,6 @@ console.log(galleryEl)
 
 
 
-// const makeGalleryOptions = image => {
-  
-//     const galleryItemEl = document.createElement('li');
-//     // console.log(galleryItemEl);
-//     galleryItemEl.classList.add('gallery__item');
-
-//   const galleryImageEl = document.createElement('img');
-//     galleryImageEl.src = image.url;
-//     galleryImageEl.alt = image.alt;
-//     galleryImageEl.classList.add('gallery__image');
-//     // console.log(galleryImageEl);
-   
-
-//   makeGallery.append(galleryItemEl, galleryImageEl);
-  
-//     return makeGallery;
-     
-// };
-
-// const elements = images.map(makeGalleryOptions);
-// console.log(elements);
 
 
 

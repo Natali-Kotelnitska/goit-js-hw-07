@@ -5,10 +5,10 @@
 
 const rangeControlEl = document.querySelector('#font-size-control');
 const textEl = document.querySelector("#text");
+// console.log(textEl)
 
 rangeControlEl.addEventListener('change', onTextSizeChange);
 
 function onTextSizeChange(event) {
-    textEl.style.fontsize = event.currentTarget.value + 'px';
-
+    textEl.style.fontSize = event.currentTarget.value + 'px';
 };
