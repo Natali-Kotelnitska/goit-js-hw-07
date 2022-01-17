@@ -1,13 +1,7 @@
-#gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-
-  list-style: none;
+.hide {
+  display: none;
 }
 
-img {
+.show {
   display: block;
-  max-width: 100%;
-  height: auto;
 }
