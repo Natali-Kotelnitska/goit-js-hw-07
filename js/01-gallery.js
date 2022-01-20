@@ -23,7 +23,6 @@ function createGalleryMarkup(items) {
     })
     .join('');
 }
-
 // 2.Реализация делегирования на div.gallery и получение url большого изображения.
 // 4.Открытие модального окна по клику на элементе галереи.
 // Замена значения атрибута src элемента <img> в модальном окне перед открытием. Используй готовую разметку модального окна с изображением из примеров библиотеки basicLightbox.
@@ -39,6 +38,7 @@ function onOpenModalWindow(e) {
 	<img width="1200" height="700" src="${e.target.dataset.source}">
 `,
       {
+        closable: true,
         onShow: instance => {
           window.addEventListener('keydown', onEsckeyPress);
           console.log('onShow', instance);
