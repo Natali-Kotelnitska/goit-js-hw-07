@@ -28,15 +28,35 @@ function createGalleryMarkup(items) {
 // 4.Открытие модального окна по клику на элементе галереи.
 // Замена значения атрибута src элемента <img> в модальном окне перед открытием. Используй готовую разметку модального окна с изображением из примеров библиотеки basicLightbox.
 // 5.Изображение обернуто в ссылку, а значит при клике по умолчанию пользователь будет перенаправлен на другую страницу.Запрети это поведение по умолчанию.
-galleryMarkupContainer.addEventListener('click', onImageClick);
+galleryMarkupContainer.addEventListener('click', onOpenModalWindow);
 
-function onImageClick(e) {
+function onOpenModalWindow(e) {
   e.preventDefault();
-  basicLightbox
+
+  const instance = basicLightbox
     .create(
       `
 	<img width="1200" height="700" src="${e.target.dataset.source}">
 `,
+      {
+        onShow: instance => {
+          window.addEventListener('keydown', onEsckeyPress);
+          console.log('onShow', instance);
+        },
+
+        onClose: instance => {
+          window.removeEventListener('keydown', onEsckeyPress);
+          console.log('onClose', instance);
+        },
+      },
     )
     .show();
+
+  // window.addEventListener('keydown', onEsckeyPress);
+
+  function onEsckeyPress(e) {
+    if (e.code === 'Escape') {
+      console.log('escape');
+    }
+  }
 }
