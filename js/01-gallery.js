@@ -32,21 +32,21 @@ galleryMarkupContainer.addEventListener('click', onOpenModalWindow);
 function onOpenModalWindow(e) {
   e.preventDefault();
 
-  const instance = basicLightbox
+  const gallery = basicLightbox
     .create(
       `
 	<img width="1200" height="700" src="${e.target.dataset.source}">
 `,
       {
         closable: true,
-        onShow: instance => {
+        onShow: gallery => {
           window.addEventListener('keydown', onEsckeyPress);
-          console.log('onShow', instance);
+          console.log('onShow', gallery);
         },
 
-        onClose: instance => {
+        onClose: gallery => {
           window.removeEventListener('keydown', onEsckeyPress);
-          console.log('onClose', instance);
+          console.log('onClose', gallery);
         },
       },
     )
@@ -56,6 +56,7 @@ function onOpenModalWindow(e) {
 
   function onEsckeyPress(e) {
     if (e.code === 'Escape') {
+      // gallery.onClose();
       console.log('escape');
     }
   }
