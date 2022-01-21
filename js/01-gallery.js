@@ -32,6 +32,9 @@ galleryMarkupContainer.addEventListener('click', onOpenModalWindow);
 function onOpenModalWindow(e) {
   e.preventDefault();
 
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
   const gallery = basicLightbox
     .create(
       `
@@ -52,11 +55,10 @@ function onOpenModalWindow(e) {
     )
     .show();
 
-  // window.addEventListener('keydown', onEsckeyPress);
-
   function onEsckeyPress(e) {
     if (e.code === 'Escape') {
       // gallery.onClose();
+      // gallery.close();
       console.log('escape');
     }
   }
