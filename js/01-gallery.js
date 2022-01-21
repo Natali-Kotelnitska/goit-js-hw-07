@@ -35,31 +35,27 @@ function onOpenModalWindow(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
-  const gallery = basicLightbox
-    .create(
-      `
+  const gallery = basicLightbox.create(
+    `
 	<img width="1200" height="700" src="${e.target.dataset.source}">
 `,
-      {
-        closable: true,
-        onShow: gallery => {
-          window.addEventListener('keydown', onEsckeyPress);
-          console.log('onShow', gallery);
-        },
-
-        onClose: gallery => {
-          window.removeEventListener('keydown', onEsckeyPress);
-          console.log('onClose', gallery);
-        },
+    {
+      closable: true,
+      onShow: gallery => {
+        window.addEventListener('keydown', onEsckeyPress);
       },
-    )
-    .show();
+
+      onClose: gallery => {
+        window.removeEventListener('keydown', onEsckeyPress);
+      },
+    },
+  );
+  gallery.show();
 
   function onEsckeyPress(e) {
     if (e.code === 'Escape') {
-      // gallery.onClose();
-      // gallery.close();
-      console.log('escape');
+      gallery.close();
+      console.log('gallery = ', gallery);
     }
   }
 }
